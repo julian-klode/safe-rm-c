@@ -1,0 +1,53 @@
+0.12c (2015-11-17)
+  - Translation to C
+
+0.12 (2014-11-03)
+  - Remove unnecessary dependency on Env
+
+0.11 (2014-10-08)
+  - Read user config from $XDG_CONFIG_HOME/safe-rm too
+  - Update URL and email address (safe-rm.org.nz is deprecated)
+
+0.10 (2013-06-09)
+  - Add IFS to the list of environment variables to untaint
+
+0.9 (2013-01-11)
+  - Add /lib32 and /lib64 to the default blacklist (bug #1097972)
+  - Mention rmfd in the README
+
+0.8 (2009-10-15)
+  - Remove unnecessary dependency on English.pm
+
+0.7 (2009-09-23)
+  - Add CDPATH to the variables to untaint
+
+0.6 (2009-05-22)
+  - Allow the deletion of symlinks to protected paths
+  - Change the "skipping" message to make it obvious that it comes from safe-rm
+
+0.5 (2009-04-02)
+  - Add basic support for wildcards in config files
+  - Always run rm even when there are no arguments
+  - Add contents to the manpage
+  - Much cleaner code (almost at PerlCritic Level 1)
+  - Turn on taint mode
+  - Update author's email address
+
+0.4 (2008-11-01)
+  - Allow the root directory to be in the protected paths (thanks to Mubeen Jukaku!)
+  - Add some setup instructions in the README file
+  - Mention the new homepage in the README file
+
+0.3 (2008-09-09)
+  - Look at the full path of files in the current directory to make sure they are
+    checked against the blacklist (thanks to Yi-Feng Tzeng!)
+
+0.2 (2008-06-09)
+  - Add support for system-wide protected path list
+  - Add support for user-specific protected path list
+  - Better instructions in the POD manpage
+  - Check for infinite loops before using the "real" rm
+  - Restore the original pathname when realpath fails
+
+0.1 (2008-06-08)
+  - Initial public release
