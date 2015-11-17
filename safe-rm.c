@@ -189,7 +189,7 @@ int main(int argc, char *argv[])
     const char *GLOBAL_CONFIG_FILE = "/etc/safe-rm.conf";
     /* Allocate one more parameter than necessary, so we can quickly
      * prepend something for testing. */
-    char **allowed_args = calloc(argc + 2, sizeof(*allowed_args));
+    char **allowed_args = calloc(argc + 1, sizeof(*allowed_args));
     int allowed = 0;
 
     read_config_file(GLOBAL_CONFIG_FILE);
@@ -202,8 +202,7 @@ int main(int argc, char *argv[])
             tsearch(DEFAULT_PROTECTED_DIRS[i], &protected_dirs, strcmpvoid);
     }
 
-    /* Build the array of allowed arguments (TODO: Disable the echo test.) */
-    allowed_args[allowed++] = "/bin/echo";
+    /* Build the array of allowed arguments */
     allowed_args[allowed++] = "/bin/rm";
 
     for (int i = 1; i < argc; i++) {
