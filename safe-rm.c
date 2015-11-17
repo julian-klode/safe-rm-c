@@ -214,7 +214,7 @@ int main(int argc, char *argv[])
         /* stat the file */
         buf.st_mode = 0;
         lstat(pathname, &buf);
-        
+
         /* Try looking up the real path */
         if (!S_ISLNK(buf.st_mode)) {
             char *cpath = realpath(pathname, NULL);
